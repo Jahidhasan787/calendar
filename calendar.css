@@ -1,0 +1,60 @@
+.section {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 50px;
+}
+
+.date,
+.day {
+    font-size: 24px;
+    font-weight: 600;
+    background-color: aquamarine;
+    height: 70px;
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.day:nth-child(7) {
+    color: red;
+}
+.date:nth-child(7n) {
+    color: RED;
+}
+.disable {
+    color: rgb(116, 177, 138) !important;
+    font-weight: 400;
+}
+
+
+
+@media screen and (max-width:676px) {
+    section {
+        flex-direction: column;
+    }
+
+    .date,
+    .day {
+        min-width: 20px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width:676px)and (max-width:1292px) {
+    section {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
