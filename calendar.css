@@ -47,7 +47,7 @@ h1 {
 @media screen and (max-width:676px) {
     section {
         flex-direction: column;
-        padding: 20px;
+        padding: 10px;
     }
 
     .date,
