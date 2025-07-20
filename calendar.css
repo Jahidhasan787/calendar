@@ -4,7 +4,7 @@
     gap: 20px;
 }
 
-section {
+.calendar {
     display: flex;
     justify-content: space-around;
     column-gap: 50px;
@@ -30,30 +30,102 @@ h1 {
 .day:nth-child(7) {
     color: red;
 }
+
 .date:nth-child(7n) {
     color: RED;
 }
+
 .disable {
     color: rgb(116, 177, 138) !important;
     font-weight: 400;
 }
 
-::selection{
+::selection {
     background-color: rgb(147, 0, 192);
-    color:white;
+    color: white;
+}
+
+/* grid section */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3,150px) 40px 40px;
+    gap: 20px;
+    margin: 50px 10px;
+}
+
+.box {
+    background-color: rgb(190, 217, 241);
+
+}
+
+#box-1 {
+    grid-row: span 5;  
+}
+
+#box-11,
+#box-12 {
+    grid-column: span 3;
+}
+
+/* layout section  */
+.header,.nav,.article,.sidebar,.advertising,.footer{
+    background-color: antiquewhite;
+    border: 2px solid tomato;
+    padding: 5px;
+    border-radius: 5px;
+}
+.header{
+    grid-area: header;
+}
+.nav{
+    grid-area: nav;
+}
+.article{
+    grid-area: article;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.advertising{
+    grid-area: advertising;
+}
+.footer{
+    grid-area: footer;
+}
+
+.layout{
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "header header header header"
+    "nav article article sidebar"
+    "nav article article advertising"
+    "footer footer footer footer";
 }
 
 
+/* responsive section  */
 @media screen and (max-width:676px) {
     section {
         flex-direction: column;
-        padding: 10px;       
+        padding: 10px;
     }
 
     .date,
     .day {
         min-width: 20px;
         height: 40px;
+    }
+    .layout{
+        grid-template-areas: 
+        "header" 
+        "nav"
+        "article"
+        "sidebar"
+        "advertising"
+        "footer";
     }
 }
 
